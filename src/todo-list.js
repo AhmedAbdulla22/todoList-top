@@ -1,6 +1,6 @@
 import { Todo } from "./todo";
 
-export function TodoList() {
+export function TodoList(category = "") {
     let list = [];
 
     function addTodo(title,description = "",dueDate = new Date(),priority = 0,notes = "",isCompleted = false) {
@@ -22,12 +22,14 @@ export function TodoList() {
     }
     
     const getTodoList = () => list;
+    const getCategory = () => (category !== "") ? category : "default";
 
     return {
         addTodo,
         removeTodo,
         modifyTodo,
-        getTodoList
+        getTodoList,
+        getCategory
     }
 
 }
