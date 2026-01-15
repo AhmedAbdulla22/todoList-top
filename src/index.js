@@ -1,13 +1,12 @@
 import { format, toDate } from "date-fns";
 import { TodoList } from "./todo-list";
 
-const list1 = TodoList();
-const list2 = TodoList("study");
+const list1 = TodoList("study");
 
 //add todos
-list1.addTodo("complete Todo functionality","well make it functional blah blah blah",new Date(),0,"",false);
-list1.addTodo("complete Semester1");
-list1.addTodo("complete Semester2");
+list1.addTodo({title: "complete Todo functionality",description: "well make it functional blah blah blah",dueDate: new Date()});
+list1.addTodo({title: "complete Semester1", dueDate: new Date(2025,8,21)});
+list1.addTodo({title: "complete Semester2", dueDate: new Date(2025,1,1)});
 
 //show list arr
 console.log("list: ",list1.getTodoList());
@@ -15,9 +14,10 @@ console.log("list: ",list1.getTodoList());
 const list = list1.getTodoList();
 
 //remove
-list1.removeTodo(list[0].id);
+// list1.removeTodo(list[0].id);
 
 //show list arr
 console.log("list: ",list1.getTodoList());
+console.log("sorted asc: ",list1.getSortedListAsc());
+console.log("sorted desc: ",list1.getSortedListDesc());
 console.log("category: ",list1.getCategory());
-console.log("category: ",list2.getCategory());
