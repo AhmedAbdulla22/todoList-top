@@ -21,15 +21,13 @@ export function TodoList(category = "") {
         })
     }
 
-    // a > b = + 
-    // a < b = - 
     
     const getTodoList = () => list;
     const getCategory = () => (category !== "") ? category : "default";
-    const getSortedListDesc = () => list.toSorted((todo1 , todo2) => {
-        console.log(`${todo2.dueDate.etTime()} - ${todo1.dueDate} :` , todo2.dueDate - todo1.dueDate);
-        return todo2.dueDate - todo1.dueDate;
-    }); 
+    
+    //Newest To Oldest
+    const getSortedListDesc = () => list.toSorted((todo1 , todo2) => todo2.dueDate - todo1.dueDate); 
+    //Oldest To Newest 
     const getSortedListAsc = () => list.toSorted((todo1 , todo2) => todo1.dueDate - todo2.dueDate); 
 
     return {
