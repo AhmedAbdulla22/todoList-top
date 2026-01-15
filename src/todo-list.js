@@ -1,16 +1,16 @@
 import { Todo } from "./todo";
 
-export function todoList() {
-    const list = [];
+export function TodoList() {
+    let list = [];
 
-    function addTodo(title,description,dueDate,priority,notes,isCompleted) {
+    function addTodo(title,description = "",dueDate = new Date(),priority = 0,notes = "",isCompleted = false) {
         const todo = Todo(title,description,dueDate,priority,notes,isCompleted) 
         
-        list.push(Todo);
+        list.push(todo);
     }
     
     function removeTodo(todoId) {
-        list = list.filter((todo) => todo.id !== todoId) 
+        list = list.filter((todo) => todo.id !== todoId);
     }
     
     function modifyTodo(todoId, modifiedTodo) {

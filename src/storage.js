@@ -1,10 +1,11 @@
 export function Storage() {
-    function saveToLocalStorage(data,name) {
-
+    function saveToLocalStorage(key,value) {
+        const str = JSON.stringify(value);
+        localStorage.setItem(key,str);
     }
 
-    function loadFromStorage(name) {
-
+    function loadFromStorage(key) {
+        return JSON.parse(localStorage.getItem(key));
     }
 
     return {

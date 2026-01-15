@@ -1,4 +1,4 @@
-export function Todo (title,description = "",dueDate,priority = 0,notes = "",isCompleted = false) {
+export function Todo (title,description = "",dueDate = new Date(),priority = 0,notes = "",isCompleted = false) {
     const id = crypto.randomUUID();
 
     function changeStatus(status) {
