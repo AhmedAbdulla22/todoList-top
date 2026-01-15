@@ -26,20 +26,13 @@ export function TodoList(category = "") {
     
     const getTodoList = () => list;
     const getCategory = () => (category !== "") ? category : "default";
-    const getSortedListDesc = () => list.toSorted((todo1 , todo2) => {
-        console.log(`${todo2.dueDate.etTime()} - ${todo1.dueDate} :` , todo2.dueDate - todo1.dueDate);
-        return todo2.dueDate - todo1.dueDate;
-    }); 
-    const getSortedListAsc = () => list.toSorted((todo1 , todo2) => todo1.dueDate - todo2.dueDate); 
 
     return {
         addTodo,
         removeTodo,
         modifyTodo,
         getTodoList,
-        getCategory,
-        getSortedListAsc,
-        getSortedListDesc
+        getCategory
     }
 
 }
