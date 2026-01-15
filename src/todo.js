@@ -1,4 +1,6 @@
 export function Todo (title,description = "",dueDate,priority = 0,notes = "",isCompleted = false) {
+    const id = crypto.randomUUID();
+
     function changeStatus(status) {
         if(status != undefined) {
             isCompleted = status;
@@ -8,6 +10,7 @@ export function Todo (title,description = "",dueDate,priority = 0,notes = "",isC
     }
 
     return {
+        id,
         title,
         description,
         dueDate,
