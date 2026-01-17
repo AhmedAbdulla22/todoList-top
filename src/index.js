@@ -1,5 +1,6 @@
+import "./index.css";
 import { format, toDate } from "date-fns";
-import { TodoList } from "./todo-list";
+import { TodoList } from "./logic/todo-list";
 
 const list1 = TodoList("study");
 
@@ -18,6 +19,5 @@ const list = list1.getTodoList();
 
 //show list arr
 console.log("list: ",list1.getTodoList());
-console.log("sorted asc: ",list1.getSortedListAsc());
-console.log("sorted desc: ",list1.getSortedListDesc());
+console.log("sorted asc: ",list1.getSortedListByDate());
 console.log("category: ",list1.getCategory());

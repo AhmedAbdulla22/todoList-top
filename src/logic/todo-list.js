@@ -25,10 +25,13 @@ export function TodoList(category = "") {
     const getTodoList = () => list;
     const getCategory = () => (category !== "") ? category : "default";
     
+    //sort by date
     //Newest To Oldest
     const getSortedListDesc = () => list.toSorted((todo1 , todo2) => todo2.dueDate - todo1.dueDate); 
     //Oldest To Newest 
     const getSortedListAsc = () => list.toSorted((todo1 , todo2) => todo1.dueDate - todo2.dueDate); 
+    const getSortedListByDate = (Asc = false) => Asc ? getSortedListAsc():getSortedListDesc(); 
+
 
     return {
         addTodo,
@@ -36,8 +39,7 @@ export function TodoList(category = "") {
         modifyTodo,
         getTodoList,
         getCategory,
-        getSortedListAsc,
-        getSortedListDesc
+        getSortedListByDate
     }
 
 }
